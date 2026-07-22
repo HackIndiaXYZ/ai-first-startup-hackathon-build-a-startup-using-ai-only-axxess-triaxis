@@ -16,6 +16,7 @@ stages:
   - quality
   - supabase
   - security
+  - mr-review
 
 variables:
   NEXT_TELEMETRY_DISABLED: "1"
@@ -79,3 +80,21 @@ pnpm-audit:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
     - if: '$CI_COMMIT_BRANCH == "main"'
+
+# ---------------------------------------------------------------------------
+# MR Review Bot — axxess-triaxis-ci-mr-review-bot
+# Runs only on merge request events. Posts an AI-powered code review comment.
+# Requires CI/CD variables: GITLAB_MR_BOT_TOKEN, ANTHROPIC_API_KEY
+# ---------------------------------------------------------------------------
+mr-review:
+  stage: mr-review
+  image: node:22-slim
+  before_script: []
+  cache: {}
+  script:
+    - node scripts/mr-review-bot.mjs
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+  allow_failure: true
+  variables:
+    GIT_STRATEGY: none
