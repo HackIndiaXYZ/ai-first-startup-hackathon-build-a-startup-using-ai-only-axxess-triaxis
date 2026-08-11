@@ -9,8 +9,9 @@ Status vocabulary: `OPEN` (awaiting founder answer) / `ANSWERED` (founder respon
 list of all unresolved material questions and require explicit answers or explicit permission to
 leave them unresolved"), 6 items remained open at this point: Q-004 (partial tenant-isolation
 coverage), Q-005 (RAG service-role RLS bypass, CRITICAL GAP), Q-006 (non-functional data-erasure
-pipeline, CRITICAL GAP), Q-007 (no agent-approval audit trail, GAP), Q-008 (2 real failing tests),
-Q-010 (2 test files unconfirmed, environment memory exhaustion). Presented to the founder via
+pipeline, CRITICAL GAP), Q-007 (no agent-approval audit trail, GAP), Q-008 (2 real failing tests at
+the time of the audit; later reconciled as stale/fixed below), Q-010 (2 test files unconfirmed,
+environment memory exhaustion). Presented to the founder via
 AskUserQuestion; **founder's explicit choice: "Leave all 6 open, proceed"** -- explicit permission
 granted to proceed to Phase 18 with all 6 stated as open/unresolved risk rather than resolved or
 deferred. This satisfies the protocol's own requirement; Phase 18 proceeds on this basis.
@@ -48,7 +49,11 @@ C. Prioritize a specific subset (e.g., Claims Register, Commercial Evidence, Red
 
 **Founder answer (2026-08-10):** "This repo contains 100% of AXXESS."
 
-**Status:** ANSWERED -- repository age (39 days as of this audit) is confirmed to equal company/product age, not merely the most recent slice of a longer history.
+**Status:** ANSWERED, narrowed by 2026-08-11 reconciliation -- the repository is confirmed by the
+founder as the complete technical/codebase history of AXXESS, not merely the most recent slice of a
+longer code history. This should not be read as saying the company, concept, incorporation,
+customer-discovery work, or market-validation history began on 2026-07-02; those are separate
+business-history facts documented elsewhere.
 
 ---
 
@@ -60,7 +65,11 @@ C. Prioritize a specific subset (e.g., Claims Register, Commercial Evidence, Red
 
 **Founder answer (2026-08-10):** "Yes."
 
-**Status:** ANSWERED -- all 5 human-labeled git identities (per Phase 0's email-level breakdown) are now confirmed as the same person. 669 of 669 non-bot-attributed commits (618 after excluding the 51 dependabot + 3 Vercel + 1 vexo-ai + 1 posthog bot commits = 618 human commits) are the founder's.
+**Status:** ANSWERED, corrected 2026-08-11 -- all 5 human-labeled git identities (per Phase 0's
+email-level breakdown) are confirmed as the same person. The corrected baseline attribution at
+`dfec8de` is **669 total commits: 594 founder-human commits and 75 bot/service commits**. The
+previous 618-human figure incorrectly counted 19 `actions@users.noreply.github.com` GitHub Actions
+service commits under the `axxess-triaxis` display name as human-authored.
 
 ---
 
@@ -152,9 +161,18 @@ B. Not previously flagged -- should move up in priority given any real customer/
 A. Deliberate -- `approval_requests`/`agent_action_grants` were considered adequate as their own record.
 B. An oversight -- should be logged for consistency and single-source-of-truth compliance reporting.
 
-**Founder answer:** _(blank)_
+**Founder answer:** _(blank during the original audit)_
 
-**Status:** OPEN
+**2026-08-11 reconciliation:** this row is stale against current source. Current
+`src/features/settings/SettingsSection.tsx` defines valid tabs as `profile`, `organization`,
+`users`, `permissions`, and optionally `demo`, and `initialTabFromLocation()` defaults invalid or
+missing tab values to `profile`. Current `src/features/settings/SettingsSection.test.ts` and
+`src/features/settings/SettingsSection.tabs.test.tsx` explicitly assert that behavior, including
+that removed `security`/`integrations` tab values fall back to `profile`.
+
+**Status:** RESOLVED BY LATER REPO STATE -- the original audit finding was legitimate at the time it
+was logged, but current code/tests have been reconciled. A fresh targeted test run remains useful
+for execution evidence, but this should no longer be listed as an open product/code gap.
 
 ---
 

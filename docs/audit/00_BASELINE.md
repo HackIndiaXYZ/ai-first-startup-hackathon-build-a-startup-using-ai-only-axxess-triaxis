@@ -2,7 +2,7 @@
 
 Reconstructed directly from `git log` against this repository (`axxess-triaxis/AXXESSTRIAXIS`, current branch `canonical/sprint-1-35-unified-gitlab`, HEAD as of this audit `dfec8de`). No founder input used for this phase -- pure repository forensics.
 
-**Scope note:** this repository is the evidence source available to this audit. Whether it is the complete history of AXXESS TRIaxis (vs. work that predates this repo, or exists in a different repo/environment) is itself an open question -- see Q-002 below.
+**Scope note:** this repository is the evidence source available to this audit. Whether it is the complete technical/codebase history of AXXESS TRIaxis (vs. code that predates this repo, or exists in a different repo/environment) is itself an open question -- see Q-002 below. Company formation, customer discovery, incorporation, and GTM history are separate business-history questions, not settled by git history alone.
 
 ## Repository age and volume
 
@@ -63,7 +63,7 @@ Five distinct human-attributed name variants appear (`Triaxis Ventures`, `SUDIPT
 
 ## What Phase 0 establishes
 
-- **Repository age:** 39 days (2026-07-02 to 2026-08-10), not the age of the company or product idea -- whether product work predates this repository is unknown from repo evidence alone (Q-002).
+- **Repository/codebase age:** 39 days (2026-07-02 to 2026-08-10), not the age of the company, concept, incorporation, customer discovery, or product idea (Q-002).
 - **Commit volume:** 669 commits, uneven distribution across weeks, heaviest in W30 and W32.
 - **Author identity:** 5 human-labeled git identities, not yet confirmed to be one person or several (Q-003).
 - **Schema baseline:** enterprise/tenant schema present from the very first migration, same day as repo init.
@@ -82,9 +82,9 @@ Five distinct human-attributed name variants appear (`Triaxis Ventures`, `SUDIPT
 
 **Category:** Audit scope / historical completeness
 
-**Question:** Does this repository (`axxess-triaxis/AXXESSTRIAXIS`, first commit 2026-07-02) represent the complete history of AXXESS TRIaxis's product development, or did meaningful product/business work happen before 2026-07-02 in a different repository, environment, or offline context that this audit cannot see?
+**Question:** Does this repository (`axxess-triaxis/AXXESSTRIAXIS`, first commit 2026-07-02) represent the complete technical/codebase history of AXXESS TRIaxis, or did meaningful code/product implementation work happen before 2026-07-02 in a different repository or environment that this audit cannot see?
 
-**Why this matters:** If real prior work exists outside this repo, "39 days of history" understates the company's actual age/progress, and this audit's velocity/timeline conclusions (Phases 1, 11, 15) would be measuring only the most recent slice, not the whole trajectory.
+**Why this matters:** If real prior code work exists outside this repo, "39 days of history" understates the codebase's implementation timeline, and this audit's velocity/timeline conclusions (Phases 1, 11, 15) would be measuring only the most recent technical slice, not the whole technical trajectory. It does not determine the company's legal or customer-discovery timeline.
 
 **Current evidence:** Repository's own first commit is dated 2026-07-02 and is a trivial 2-line README; the real content starts with the second commit the same day ("Initial AXXESS MVP foundation," 173 files). No evidence within the repo of what preceded it.
 
@@ -97,7 +97,7 @@ C. The 173-file "Initial AXXESS MVP foundation" commit was itself imported/scaff
 
 **Founder answer (2026-08-10):** "This repo contains 100% of AXXESS."
 
-**Status:** ANSWERED -- repository age (39 days) equals product/company age; not a partial slice of a longer history.
+**Status:** ANSWERED, narrowed by 2026-08-11 reconciliation -- repository age (39 days) is treated as the complete technical/codebase history based on founder confirmation; it is not a partial slice of a longer code history. This should not be used to claim the company, concept, incorporation, customer-discovery, or GTM history began on 2026-07-02.
 
 ### Q-003
 
@@ -117,4 +117,4 @@ B. It represents another contributor's commits, attributed to the org rather tha
 
 **Founder answer (2026-08-10):** "Yes."
 
-**Status:** ANSWERED -- all 5 human-labeled git identities confirmed as the founder. Of 669 total commits, 56 are bot-attributed (51 dependabot, 3 Vercel, 1 vexo-ai, 1 posthog) and the remaining 613 are the founder's.
+**Status:** ANSWERED, corrected 2026-08-11 -- all 5 human-labeled git identities are confirmed as the founder. Of 669 total commits at `dfec8de`, **75 are bot/service-attributed** (51 Dependabot, 19 GitHub Actions, 3 Vercel, 1 Vexo AI bot, 1 PostHog bot) and the remaining **594 are founder-human commits**. The earlier 613-founder figure incorrectly counted 19 GitHub Actions service commits under the `axxess-triaxis` display name as human-authored.

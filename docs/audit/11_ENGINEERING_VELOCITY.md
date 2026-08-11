@@ -21,9 +21,11 @@ This is not a flat or declining trend -- W30's 200-commit peak is over 5x W27's 
 W32's 160 shows the pace sustained rather than only front-loaded. W33 is a partial week (data
 collection cutoff mid-week), not a real slowdown -- not read as declining velocity.
 
-**Not evaluated this phase:** per-author breakdown by week (Phase 0 already established 613 of 669
-commits, as of that earlier snapshot, were the founder's own git identity across 5 email variants,
-confirmed the same person via Q-003; not re-derived here for the current 737-commit total).
+**Not evaluated this phase:** per-author breakdown by week (Phase 0's corrected 2026-08-11
+reconciliation established 594 of 669 commits, as of that earlier snapshot, were founder-human
+commits across the confirmed founder git identities; the remaining 75 were bot/service commits,
+including 19 GitHub Actions commits previously miscounted as human. This was not re-derived here
+for the current 737-commit total).
 
 ## Pull Request Throughput
 

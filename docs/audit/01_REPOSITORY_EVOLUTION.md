@@ -1,6 +1,6 @@
 # Phase 1 -- Repository Forensics
 
-Direct `git`/`gh` measurements against `axxess-triaxis/AXXESSTRIAXIS`, HEAD at time of this phase. Builds on Phase 0's resolved baseline (39-day repo history, 100% of AXXESS per founder confirmation, 613 of 669 commits founder-authored).
+Direct `git`/`gh` measurements against `axxess-triaxis/AXXESSTRIAXIS`, HEAD at time of this phase. Builds on Phase 0's resolved baseline (39-day complete technical/codebase history per founder confirmation, 594 of 669 commits founder-human-authored, 75 bot/service-authored).
 
 ## Current-state size
 
